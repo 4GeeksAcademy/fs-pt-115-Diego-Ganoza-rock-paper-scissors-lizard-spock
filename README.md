@@ -50,6 +50,7 @@ node src/app.js
 ```
 
 Or you can run 
+# Rock, Paper, Scissors, Lizard, Spock (console version)
 npm install 
 then 
 npm run start 
