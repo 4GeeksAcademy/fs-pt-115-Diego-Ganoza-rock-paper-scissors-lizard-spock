@@ -8,28 +8,26 @@ let gameOptions = {
     paper : ["rock", "spock"],
     scissors : ["paper", "lizard"],
     lizard :["paper", "spock"],
-    spock : ["scissord", "rock"]
+    spock : ["scissors", "rock"]
 };
-function Play (YourChoise)
-{
+
+const RandomSelection = () => {
+    return gameSelections[Math.floor(Math.random() * gameSelections.length)]
+}
+
+function Play (YourChoise){
     YourChoise.toLowerCase();
-    const ComputerChoise = gameSelections[Math.floor(Math.random() * gameSelections.length)]
-    console.log(`Seleccion de la IA: ${ComputerChoise}`);
+    const computerChoise = RandomSelection();
+    console.log(`Seleccion de la IA: ${computerChoise}`);
     console.log(`Seleecion del jugador: ${YourChoise}`);
     
-    if(YourChoise === ComputerChoise)
-    {
-        console.log("Empate");
-    }
-    else if(gameOptions[YourChoise].includes(ComputerChoise))
-    {
-        console.log("Tu ganas");
-    }
-    else
-    {
-        console.log("Tu pierdes");
-    }
+    if(YourChoise === computerChoise) console.log("Empate");
+
+    else if(gameOptions[YourChoise].includes(computerChoise)) console.log("Tu ganas");
+
+    else console.log("Tu pierdes");
 }
+
 Play("rock");
 
 
